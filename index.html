@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Tutorial de vue</title>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <div class="card" id="App1">
+            <h5 class="card-header bg-dark text-white">Mostrando la data</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App1</h5>
+                <p class="card-text"><span class="text-danger"><b>variable:</b> </span> {{mensaje}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card" id="App2">
+            <h5 class="card-header bg-dark text-white">Ciclo for</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App2</h5>
+                <p class="card-text"><span class="text-danger"><b>Ciclo for:</b></span></p>
+                <ul>
+                    <li v-for="fruta of frutas">{{fruta}}</li>
+                </ul>
+                <hr>
+                <p class="card-text"><span class="text-danger"><b>Ciclo for con objeto de JS:</b></span></p>
+                <ul>
+                    <li v-for="frutita of otrasFruta">nombre: {{frutita.nombre}}, cantidad: {{frutita.cantidad}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card" id="App3">
+            <h5 class="card-header bg-dark text-white">Condicion if</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App3</h5>
+                <p class="card-text"><span class="text-danger"><b>If:</b></span></p>
+                <p class="card-text" v-if="condicion === true">Se muestra este si esta en true</p>
+                <p class="card-text" v-if="condicion2 === true">Se muestra este otro esta en true</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card" id="App4">
+            <h5 class="card-header bg-dark text-white">V-model</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App4</h5>
+                <p class="card-text"><span class="text-danger"><b>con un input:</b></span></p>
+                <h3>{{variableCambiada}}</h3>
+                <input type="text" v-model="variableCambiada">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card" id="App5">
+            <h5 class="card-header bg-dark text-white">Metodos</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App4</h5>
+                <p class="card-text"><span class="text-danger"><b>Interactuar presionando un boton</b></span></p>
+                <button type="button" class="btn btn-success" @click="interactuar">Presiona</button>
+                <p class="card-text"><span class="text-danger"><b>Agregar a un array</b></span></p>
+                <h3>Agregando a: {{personanueva}}</h3>
+                <input type="text" v-model="personanueva">
+                <button type="button" class="btn btn-success" @click="agregarpersona">agregar</button>
+                <ul>
+                    <li v-for="persona of personas">nombre: {{persona.nombre}}, edad: {{persona.edad}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="function.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
