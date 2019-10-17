@@ -60,3 +60,46 @@ var app5 = new Vue({
         }
     }
 });
+
+//KEYAPP
+var app6 = new Vue({
+    el: '#App6',
+    data: {
+        datoingresar: "",
+    },
+    methods: {
+        agregarDato() {
+            alert(this.datoingresar)
+        }
+    }
+});
+
+//COMPUTED
+var app7 = new Vue({
+    el: '#App7',
+    data: {
+        frutas: ["pera", "manzana", "platano"],
+        otrasFruta: [
+            { nombre: "pera", cantidad: 10 },
+            { nombre: "manzana", cantidad: 10 },
+            { nombre: "platano", cantidad: 10 },
+        ],
+        nuevaFruta: "",
+        totalFrutas: 0
+    },
+    methods: {
+        agregarFruta() {
+            this.otrasFruta.push({ nombre: this.nuevaFruta, cantidad: 0 })
+            this.nuevaFruta = ""
+        }
+    },
+    computed: { //en este caso se ejecuta el computed cada vez que se cambie datos en la cantidad o total
+        sumandoFruta() {
+            this.totalFrutas = 0
+            for (fruta of this.otrasFruta) {
+                this.totalFrutas = this.totalFrutas + fruta.cantidad
+            }
+            return this.totalFrutas
+        }
+    }
+});

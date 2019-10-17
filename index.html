@@ -74,7 +74,7 @@
         <div class="card" id="App5">
             <h5 class="card-header bg-dark text-white">Metodos</h5>
             <div class="card-body bg-info text-white">
-                <h5 class="card-title">referencia App4</h5>
+                <h5 class="card-title">referencia App5</h5>
                 <p class="card-text"><span class="text-danger"><b>Interactuar presionando un boton</b></span></p>
                 <button type="button" class="btn btn-success" @click="interactuar">Presiona</button>
                 <p class="card-text"><span class="text-danger"><b>Agregar a un array</b></span></p>
@@ -84,6 +84,38 @@
                 <ul>
                     <li v-for="persona of personas">nombre: {{persona.nombre}}, edad: {{persona.edad}}</li>
                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card" id="App6">
+            <h5 class="card-header bg-dark text-white">Key Up</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App6</h5>
+                <p class="card-text"><span class="text-danger"><b>Presionando la tecla enter</b></span></p>
+                <p class="card-text">Ingresando palabra: {{datoingresar}}</p>
+                <input type="text" v-model="datoingresar" @keyup.enter="agregarDato">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card" id="App7">
+            <h5 class="card-header bg-dark text-white">Computed</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App7</h5>
+                <p class="card-text"><span class="text-danger"><b>Se activa este metodo cuando se realice algun cambio en alguna variable que interactue el computed</b></span></p>
+
+                <h3>Agregando a: {{nuevaFruta}}</h3>
+                <input type="text" v-model="nuevaFruta">
+                <button type="button" class="btn btn-success" @click="agregarFruta">agregar</button>
+                <ul>
+                    <li v-for="fruta of otrasFruta">nombre: {{fruta.nombre}}, cantidad: {{fruta.cantidad}}
+                        <button @click="fruta.cantidad++">+</button>
+                    </li>
+                </ul>
+                <h3>Total: {{sumandoFruta}}</h3>
             </div>
         </div>
     </div>
