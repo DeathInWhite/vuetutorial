@@ -103,3 +103,34 @@ var app7 = new Vue({
         }
     }
 });
+
+//CLASES
+var app8 = new Vue({
+    el: '#App8',
+    data: {
+        fondo: 'bg-warning',
+        color: false,
+    },
+    methods: {
+        cambiarcolor() {
+            this.color = !this.color
+        }
+    },
+    computed: {
+
+    }
+});
+
+//PROPIEDADES COMPUTADAS
+var app9 = new Vue({
+    el: '#App9',
+    data: {
+
+    },
+    methods: {
+
+    },
+    computed: {
+
+    }
+});
