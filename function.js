@@ -125,12 +125,74 @@ var app8 = new Vue({
 var app9 = new Vue({
     el: '#App9',
     data: {
-
+        mensaje: "Hola como estas?",
+        progreso: 0,
     },
     methods: {
-
+        sumar() {
+            this.progreso++
+        },
+        restar() {
+            this.progreso--
+        }
     },
     computed: {
+        invertido() {
+            return this.mensaje.split('').reverse().join('');
+        },
+        clase() {
+            return {
+                'bg-danger': this.progreso <= 25,
+                'bg-warning': this.progreso > 25 && this.progreso <= 50,
+                'bg-info': this.progreso > 50 && this.progreso <= 75,
+                ' bg-success': this.progreso > 75 && this.progreso <= 100
+            }
+        }
+    }
+});
 
+var app10 = new Vue({
+    el: '#App10',
+    data: {
+        mensaje: 'mensaje de muestra',
+        beforecreate: ''
+    },
+    beforeCreate() {
+        console.log("------------------------")
+        console.log("mensaje de before create")
+    },
+    created() {
+        //al crear los metdoso, observadores y eventos, pero aun no accede al DOM
+        //aun no se puede acceder al 'el'
+        console.log("mensaje de created")
+    },
+    beforeMount() {
+        //se ejecuta antes de insertar el DOM
+        console.log("mensaje de beforeMount")
+    },
+    mounted() {
+        //se ejecuta al insertar el DOM
+        console.log("mensaje de mounted")
+    },
+    beforeUpdate() {
+        //Al detectar un cambio
+        console.log("mensaje de beforeUpdate")
+    },
+    updated() {
+        //Al realizar los cambios
+        console.log("mensaje de updated")
+    },
+    beforeDestroyed() {
+        //antes de destruir la instancia
+        console.log("mensaje de beforeDestroyed")
+    },
+    destroyed() {
+        //se destruye toda la instancia
+        console.log("mensaje de destroyed")
+    },
+    methods: {
+        destruir() {
+            this.$destroy();
+        }
     }
 });

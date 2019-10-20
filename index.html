@@ -138,6 +138,50 @@
         </div>
     </div>
 
+    <div class="container mt-4">
+        <div class="card" id="App9">
+            <h5 class="card-header bg-dark text-white">Propiedades computadas</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App9</h5>
+                <p class="card-text"><span class="text-danger"><b>Si se quiere usar datos con logica, no se puede hacer normalmente en el "data"</b></span></p>
+                <p class="card-text"><span class="text-danger"><b>Se tienen que usar las propiedades computadas</b></span></p>
+                <br>
+                <h3>Este mensaje es normal de data: {{mensaje}}</h3>
+                <h3>Este mensaje es de computed: {{invertido}}</h3>
+                <input type="text" v-model="mensaje">
+                <hr>
+                <h1>{{progreso}}</h1>
+                <button type="button" class="btn btn-primary" @click="sumar">+</button>
+                <button type="button" class="btn btn-danger" @click="restar">-</button>
+                <br>
+                <div class="progress mt-4">
+                    <div class="progress-bar" :class="clase" role="progressbar" :style="{'width': progreso+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{progreso}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card" id="App10">
+            <h5 class="card-header bg-dark text-white">Ciclo de vida</h5>
+            <div class="card-body bg-info text-white">
+                <h5 class="card-title">referencia App10</h5>
+                <p class="card-text"><span class="text-danger"><b>Vue tiene un ciclo de vida antesde que se ejecuten las acciones y estas son</b></span></p>
+                <h3>{{mensaje}}</h3>
+                <button @click="mensaje='mensaje cambiado'">cambiar</button>
+                <button @click="destruir()">destruir</button>
+                <p class="card-text"><span class="text-dark">Ve a la consola y observa como se hace el ciclo</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <form action="segunda.html">
+            <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Siguiente" />
+        </form>
+    </div>
+    <br>
+
     <script src="function.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
